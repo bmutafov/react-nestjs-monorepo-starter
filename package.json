@@ -1,0 +1,33 @@
+{
+  "name": "@scrabblike/root",
+  "private": true,
+  "version": "1.0.0",
+  "description": "A monorepo for React and NestJs",
+  "main": "index.js",
+  "workspaces": {
+    "packages": [
+      "workspaces/*"
+    ],
+    "nohoist": [
+      "**/react-scripts"
+    ]
+  },
+  "scripts": {
+    "test": "echo \"todo\"",
+    "i": "node install-helper.js",
+    "build:app": "yarn workspace @scrabblike/client build",
+    "build:api": "yarn workspace @scrabblike/server build",
+    "start:app": "yarn workspace @scrabblike/client start",
+    "start:api": "yarn workspace @scrabblike/server start",
+    "build": "yarn build:api && yarn build:app",
+    "start": "node workspaces/server/dist/main.js"
+  },
+  "keywords": [
+    "nestjs",
+    "react",
+    "monorepo",
+    "workspaces"
+  ],
+  "author": "",
+  "license": "ISC"
+}
